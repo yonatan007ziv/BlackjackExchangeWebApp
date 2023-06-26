@@ -11,7 +11,7 @@ namespace FirstWeb
             {
                 MailMessage message = new MailMessage();
 
-                message.From = new MailAddress("yonatan003ziv@gmail.com");
+                message.From = new MailAddress("SMTP EMAIL HERE");
                 message.To.Add(new MailAddress(email));
 
                 message.Subject = title;
@@ -23,7 +23,7 @@ namespace FirstWeb
                 client.Port = 587;
 
                 client.UseDefaultCredentials = false;
-                client.Credentials = new NetworkCredential("yonatan003ziv@gmail.com", "imecwdmpdporzdgz");
+                client.Credentials = new NetworkCredential("SMTP EMAIL HERE", "SMTP PASSWORD HERE");
 
                 client.EnableSsl = true;
 
