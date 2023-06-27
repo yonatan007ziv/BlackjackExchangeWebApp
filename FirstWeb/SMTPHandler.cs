@@ -5,13 +5,16 @@ namespace FirstWeb
 {
     internal static class SMTPHandler
     {
+        private static readonly string SmtpEmail = "email here";
+        private static readonly string SmtpPassword = "password here";
+        
         public static bool SendEmail(string email, string title, string content)
         {
             try
             {
                 MailMessage message = new MailMessage();
 
-                message.From = new MailAddress("yonatan003ziv@gmail.com");
+                message.From = new MailAddress(SmtpEmail);
                 message.To.Add(new MailAddress(email));
 
                 message.Subject = title;
@@ -23,7 +26,7 @@ namespace FirstWeb
                 client.Port = 587;
 
                 client.UseDefaultCredentials = false;
-                client.Credentials = new NetworkCredential("yonatan003ziv@gmail.com", "imecwdmpdporzdgz");
+                client.Credentials = new NetworkCredential(SmtpEmail, SmtpPassword);
 
                 client.EnableSsl = true;
 
