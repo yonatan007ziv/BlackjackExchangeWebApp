@@ -1,5 +1,4 @@
-﻿using System.IO.Pipes;
-using System.Net;
+﻿using System.Net;
 using System.Text;
 
 namespace FirstWeb
