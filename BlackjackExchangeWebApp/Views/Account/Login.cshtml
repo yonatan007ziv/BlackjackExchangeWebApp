@@ -1,0 +1,25 @@
+﻿@model LoginModel;
+@{
+    ViewData["Title"] = "Login";
+}
+<div>
+    <form asp-controller="Account" asp-action="LoginRequest" method="post">
+        <h1>Login Form</h1>
+        <ul class="list-unstyled">
+            <li>
+                <label class="float-start">Username:</label>
+                <input type="text" asp-for=UserModel.Username required />
+            </li>
+            <br/>
+            <li>
+                <label class="float-start">Password:</label>
+                <input type="Password" asp-for=UserModel.Password required />
+            </li>
+        </ul>
+        <button class="btn-primary" type="submit">Login</button>
+    </form>
+    @if (Model.Response != null)
+    {
+        <text>@Model.Response</text>
+    }
+</div>

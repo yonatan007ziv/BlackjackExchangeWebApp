@@ -1,0 +1,25 @@
+﻿@model RegisterModel;
+@{
+    ViewData["Title"] = "Register";
+}
+<div>
+    <form>
+        <h1>Register Form</h1>
+        <ul>
+            <li>
+                <input type="text" asp-for=UserModel.Username required />
+            </li>
+            <li>
+                <input type="Password" asp-for=UserModel.Password required />
+            </li>
+            <li>
+                <input type="text" asp-for=UserModel.Email required />
+            </li>
+        </ul>
+        <button class="btn-primary" type="submit">Register</button>
+    </form>
+    @if (Model.Response != null)
+    {
+        <text>@Model.Response</text>
+    }
+</div>

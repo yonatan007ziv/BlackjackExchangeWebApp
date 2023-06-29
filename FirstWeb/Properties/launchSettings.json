@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "WebServer": {
-      "commandName": "Project",
-      "workingDirectory": "D:\\Code\\VS Community\\FirstWeb\\FirstWeb"
-    }
-  }
-}
