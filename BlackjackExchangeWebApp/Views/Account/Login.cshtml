@@ -3,14 +3,13 @@
     ViewData["Title"] = "Login";
 }
 <div>
+    <h1>Login Form</h1>
     <form asp-controller="Account" asp-action="LoginRequest" method="post">
-        <h1>Login Form</h1>
         <ul class="list-unstyled">
             <li>
                 <label class="float-start">Username:</label>
                 <input type="text" asp-for=UserModel.Username required />
             </li>
-            <br/>
             <li>
                 <label class="float-start">Password:</label>
                 <input type="Password" asp-for=UserModel.Password required />
@@ -22,4 +21,14 @@
     {
         <text>@Model.Response</text>
     }
+    <div>
+        <ul class="list-unstyled">
+            <li>
+                <a asp-controller="Account" asp-action="ForgotPassword">Forgot Pasword</a>
+            </li>
+            <li>
+                <a asp-controller="Account" asp-action="Register">Register</a>
+            </li>
+        </ul>
+    </div>
 </div>

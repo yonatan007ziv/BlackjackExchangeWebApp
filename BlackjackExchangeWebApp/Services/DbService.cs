@@ -38,7 +38,7 @@ namespace BlackjackExchangeWebApp.Services
             return _context.Users.Any(user => user.Email == email);
         }
 
-        public List<Models.DbModels.ThreadDbModel> GetThreadsList()
+        public List<ThreadDbModel> GetThreadsList()
         {
             return _context.Threads.ToList();
         }

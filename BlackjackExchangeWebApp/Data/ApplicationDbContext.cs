@@ -15,11 +15,6 @@ namespace BlackjackExchangeWebApp.Data
         public ApplicationDbContext(IConfiguration config, ILogger logger)
         { _config = config; _logger = logger; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(_config.GetValue<string>("DatabaseSettings:ConnectionStrings:DefaultConnection"));
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ThreadDbModel>()

@@ -1,6 +1,7 @@
 ﻿using BlackjackExchangeWebApp.Interfaces;
 using BlackjackExchangeWebApp.Models;
 using BlackjackExchangeWebApp.Models.AccountModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlackjackExchangeWebApp.Controllers
@@ -13,6 +14,7 @@ namespace BlackjackExchangeWebApp.Controllers
         public AccountController(ILogger logger, IDatabaseService dbService)
         { _logger = logger; _dbService = dbService; }
 
+        [Authorize]
         public IActionResult Index()
         {
             return View();
@@ -68,7 +70,12 @@ namespace BlackjackExchangeWebApp.Controllers
                 return View("Register", registerModel);
 
             _dbService.InsertUser(userCredentials.Username, userCredentials.Password, userCredentials.Email);
-            return View("Index");
+            return View("Login", new LoginModel() { Response = "Successfully Registered!"});
+        }
+
+        public IActionResult ForgotPassword()
+        {
+            return View();
         }
     }
 }

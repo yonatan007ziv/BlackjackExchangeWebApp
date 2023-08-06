@@ -1,6 +1,4 @@
-﻿using BlackjackExchangeWebApp.Models.DbModels;
-
-namespace BlackjackExchangeWebApp.Interfaces
+﻿namespace BlackjackExchangeWebApp.Interfaces
 {
     public interface IDatabaseService
     {
